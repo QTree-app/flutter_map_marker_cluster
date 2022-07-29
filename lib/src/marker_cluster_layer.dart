@@ -521,7 +521,8 @@ class _MarkerClusterLayerState extends State<MarkerClusterLayer>
   }
 
   VoidCallback _onClusterTap(MarkerClusterNode cluster) {
-    return () {
+    return !widget.options.isAnimate ? () {} : 
+    () {
       if (_animating) return;
 
       widget.options.onClusterTap?.call(cluster);

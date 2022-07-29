@@ -83,6 +83,7 @@ typedef ClusterWidgetBuilder = Widget Function(
     BuildContext context, List<Marker> markers);
 
 class MarkerClusterLayerOptions extends LayerOptions {
+  final bool isAnimate;
   /// Cluster builder
   final ClusterWidgetBuilder builder;
 
@@ -173,6 +174,7 @@ class MarkerClusterLayerOptions extends LayerOptions {
 
   MarkerClusterLayerOptions({
     required this.builder,
+    this.isAnimate = true,
     this.rotate,
     this.rotateOrigin,
     this.rotateAlignment,
